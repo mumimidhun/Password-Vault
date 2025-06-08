@@ -71,7 +71,7 @@ https://github.com/user-attachments/assets/e428e0b8-1bce-4eae-b720-5d7f83843eba
 | Layer        | Technology                             |
 |--------------|-----------------------------------------|
 | Language     | Python 3.x                              |
-| GUI          | Tkinter + ttk                          |
+| GUI          | Tkinter + tk                          |
 | DB           | MySQL                                  |
 | Encryption   | `cryptography.fernet` for credentials   |
 | Hashing      | PBKDF2-HMAC-SHA256 for master password |
