@@ -16,8 +16,8 @@ current_username = None
 # --- MySQL DB Connection ---
 db = mysql.connector.connect(
     host="localhost",
-    user="root",
-    password="Gola@2006",
+    user="your_mysql_username",
+    password="your_mysql_password",
     database="password_vault"
 )
 cursor = db.cursor()
