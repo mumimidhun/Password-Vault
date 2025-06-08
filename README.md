@@ -94,7 +94,7 @@ https://github.com/user-attachments/assets/e428e0b8-1bce-4eae-b720-5d7f83843eba
 
 ### 1. Clone the Repository
 
-git clone https://github.com/DevanshuHB/password-vault.git
+git clone https://github.com/DevanshuHB
 cd password-vault
 
 ### 2. Set Up MySQL
