@@ -100,7 +100,7 @@ cd password-vault
 ### 2. Set Up MySQL
 - Make sure MySQL is installed and running.
 * Run the provided SQL file:
-> SOURCE path/to/db_setup.sql;
+> SOURCE [db_setup.sql](https://github.com/DevanshuHB/Password-Vault/blob/main/db_setup.sql);
 
 ### 3. Install Dependencies
 
